@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//Heroku port configuration:
+const port = process.env.PORT || 3000;
+
 //Express calling into a variable
 var app = express();
 
@@ -82,6 +85,6 @@ app.get('/bad', (req, res) => {
   });
 });
 //Server start defining a port:
-app.listen(3000, () => {
-  console.log('Server up and running in port 3000');
+app.listen(port, () => {
+  console.log(`Server up and running in port ${port}`);
 });
